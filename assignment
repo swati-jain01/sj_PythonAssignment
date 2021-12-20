@@ -1,0 +1,34 @@
+##1st assignement Program to count the digit in a number
+
+n = int(input('Enter a number - '))
+print('number is ', n)
+count = 0
+while n != 0:
+    n = n // 10
+    count += 1
+print('Number of digit in given number is ', count)
+
+#Reverse String— without affecting special char
+
+def reverseSting(text):
+    index = -1
+
+    for i in range(len(text) - 1, int(len(text) / 2), -1):
+
+        if text[i].isalpha():
+            temp = text[i]
+            while True:
+                index += 1
+                if text[index].isalpha():
+                    text[i] = text[index]
+                    text[index] = temp
+                    break
+    return text
+
+
+string = "a!!!b.c.d,e'f,ghi"
+print("Input string: ", string)
+string = reverseSting(list(string))
+print("Output string: ", "".join(string))
+
+
